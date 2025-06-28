@@ -53,5 +53,10 @@ public class Main {
             .filter(book -> book.getPrice() > 50)
             .forEach(System.out::println);
 
+        System.out.println("\n🔤 Títulos de libros en mayúsculas:");
+        books.stream()
+            .map(book -> book.getTitle().toUpperCase())
+            .forEach(System.out::println);
+
     }
 }

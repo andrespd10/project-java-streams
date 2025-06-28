@@ -90,6 +90,17 @@ public class Main {
 
         titles.forEach(System.out::println);
 
+        System.out.println("\n📖 Primeros 5 libros (usando limit):");
+        books.stream()
+            .limit(5)
+            .forEach(System.out::println);
+
+        System.out.println("\n➡️ Libros omitidos (saltando los primeros 5):");
+        books.stream()
+            .skip(5)
+            .forEach(System.out::println);
+
+
 
 
 

@@ -55,7 +55,7 @@ public class Main {
             .filter(book -> book.getPrice() > 50)
             .forEach(System.out::println);
 
-        System.out.pri|ntln("\n🔤 Títulos de libros en mayúsculas:");
+        System.out.println("\n Título de libros en mayúsculas:");
         books.stream()
             .map(book -> book.getTitle().toUpperCase())
             .forEach(System.out::println);
@@ -67,6 +67,21 @@ public class Main {
             .collect(Collectors.toList());
 
         cheapBooks.forEach(System.out::println);
+
+        System.out.println("\n💰 Precio total de todos los libros:");
+        double totalPrice = books.stream()
+            .map(Book::getPrice)
+            .reduce(0.0, (a, b) -> a + b);
+
+        System.out.println("Total: $" + totalPrice);
+
+        System.out.println("\n🔎 ¿Hay algún libro de Robert C. Martin?");
+        boolean hasMartin = books.stream()
+            .anyMatch(book -> book.getAuthor().equals("Robert C. Martin"));
+
+        System.out.println("Resultado: " + (hasMartin ? "Sí, hay al menos uno." : "No, no hay ninguno."));
+
+
 
 
     }

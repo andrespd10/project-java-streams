@@ -100,6 +100,12 @@ public class Main {
             .skip(5)
             .forEach(System.out::println);
 
+        System.out.println("\n💵 Libros ordenados por precio (menor a mayor):");
+        books.stream()
+            .sorted(Comparator.comparing(Book::getPrice))
+            .forEach(System.out::println);
+
+
 
 
 

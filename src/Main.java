@@ -105,6 +105,16 @@ public class Main {
             .sorted(Comparator.comparing(Book::getPrice))
             .forEach(System.out::println);
 
+        System.out.println("\n📚 Recomendaciones (libros por debajo de $60 ordenados de mayor a menor precio):");
+        List<String> recomendaciones = books.stream()
+            .filter(book -> book.getPrice() < 60)
+            .sorted(Comparator.comparing(Book::getPrice).reversed())
+            .map(Book::getTitle)
+            .collect(Collectors.toList());
+
+        recomendaciones.forEach(System.out::println);
+
+
 
 
 

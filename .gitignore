@@ -1,0 +1,15 @@
+# Archivos compilados
+*.class
+
+# Carpeta de salida
+bin/
+
+# Librerías externas (si se van a descargar o son locales)
+lib/
+
+# Configuración de VSCode
+.vscode/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db

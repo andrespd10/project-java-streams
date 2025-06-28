@@ -82,6 +82,15 @@ public class Main {
         System.out.println("Resultado: " + (hasMartin ? "Sí, hay al menos uno." : "No, no hay ninguno."));
 
 
+        System.out.println("\n📚 Títulos únicos de libros:");
+        List<String> titles = books.stream()
+            .map(Book::getTitle)
+            .distinct()
+            .collect(Collectors.toList());
+
+        titles.forEach(System.out::println);
+
+
 
 
     }

@@ -47,5 +47,11 @@ public class Main {
 
         // Mostrar todos los libros
         books.stream().forEach(System.out::println);
+
+        System.out.println("\n📘 Libros con precio mayor a $50:");
+        books.stream()
+            .filter(book -> book.getPrice() > 50)
+            .forEach(System.out::println);
+
     }
 }

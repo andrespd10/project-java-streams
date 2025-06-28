@@ -1,4 +1,6 @@
 import java.util.*;
+import java.util.stream.Collectors;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -53,10 +55,19 @@ public class Main {
             .filter(book -> book.getPrice() > 50)
             .forEach(System.out::println);
 
-        System.out.println("\n🔤 Títulos de libros en mayúsculas:");
+        System.out.pri|ntln("\n🔤 Títulos de libros en mayúsculas:");
         books.stream()
             .map(book -> book.getTitle().toUpperCase())
             .forEach(System.out::println);
+
+        
+        System.out.println("\n💸 Libros con precio menor a $50:");
+        List<Book> cheapBooks = books.stream()
+            .filter(book -> book.getPrice() < 50)
+            .collect(Collectors.toList());
+
+        cheapBooks.forEach(System.out::println);
+
 
     }
 }
